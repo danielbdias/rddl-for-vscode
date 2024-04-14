@@ -1,0 +1,25 @@
+{
+  "name": "rddl-for-vscode",
+  "displayName": "RDDL for VSCode",
+  "description": "Language support for RDDL",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.88.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "rddl",
+      "aliases": ["RDDL", "rddl"],
+      "extensions": [".rddl"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "rddl",
+      "scopeName": "domain.rddl",
+      "path": "./syntaxes/rddl.tmLanguage.json"
+    }]
+  }
+}
