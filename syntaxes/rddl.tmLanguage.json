@@ -2,42 +2,19 @@
 	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
 	"name": "RDDL",
 	"patterns": [
-		{
-			"include": "#comments"
-		},
-		{
-			"include": "#components"
-		},
-		{
-			"include": "#keywords"
-		},
-		{
-			"include": "#fluenttypes"
-		},
-		{
-			"include": "#types"
-		},
-		{
-			"include": "#numbers"
-		},
-		{
-			"include": "#literals"
-		},
-		{
-			"include": "#builtinfunctions"
-		},
-		{
-			"include": "#aggregations"
-		},
-		{
-			"include": "#distributions"
-		},
-		{
-			"include": "#parameters"
-		},
-		{
-			"include": "#operators"
-		}
+		{ "include": "#comments" },
+		{ "include": "#types" },
+		{ "include": "#fluent-types" },
+		{ "include": "#requirement-types" },
+		{ "include": "#keywords" },
+		{ "include": "#numbers" },
+		{ "include": "#literals" },
+		{ "include": "#builtin-functions" },
+		{ "include": "#aggregation-functions" },
+		{ "include": "#discrete-distribution-functions" },
+		{ "include": "#continuous-distribution-functions" },
+		{ "include": "#component-properties" },
+		{ "include": "#components" }
 	],
 	"repository": {
 		"comments": {
@@ -51,24 +28,16 @@
 		"components": {
 			"patterns": [
 				{
-					"name": "support.type.property-name",
-					"match": "\b(domain|requirements|types|objects|pvariables|cpfs|reward|action-preconditions|state-invariants|termination|instance|init-state|non-fluents|max-nondef-actions|horizon|discount)\b"
+					"name": "entity.name.type.class",
+					"match": "\\b(domain|instance|non-fluents)\\b"
 				}
 			]
 		},
-		"keywords": {
+		"component-properties": {
 			"patterns": [
 				{
-					"name": "keyword.control",
-					"match": "\b(if|then|else|switch|case|default)\b"
-				}
-			]
-		},
-		"fluenttypes": {
-			"patterns": [
-				{
-					"name": "support.constant",
-					"match": "\b(state-fluent|action-fluent|observ-fluent|interm-fluent|derived-fluent|non-fluent)\b"
+					"name": "variable.other.property",
+					"match": "\\b(requirements|types|objects|pvariables|cpfs|reward|action-preconditions|state-invariants|termination|init-state|max-nondef-actions|horizon|discount|max-nondef-actions)\\b"
 				}
 			]
 		},
@@ -76,7 +45,31 @@
 			"patterns": [
 				{
 					"name": "support.type",
-					"match": "\b(bool|int|real|object)\b"
+					"match": "\\b(bool|int|real|object)\\b"
+				}
+			]
+		},
+		"fluent-types": {
+			"patterns": [
+				{
+					"name": "entity.name.type",
+					"match": "\\b(state-fluent|action-fluent|observ-fluent|interm-fluent|derived-fluent|non-fluent)\\b"
+				}
+			]
+		},
+		"keywords": {
+			"patterns": [
+				{
+					"name": "keyword.control",
+					"match": "\\b(if|then|else|switch|case|default)\\b"
+				}
+			]
+		},
+		"requirement-types": {
+			"patterns": [
+				{
+					"name": "entity.name.type",
+					"match": "\\b(concurrent|constrained-state|continuous|cpf-deterministic|integer-valued|intermediate-nodes|multivalued|partially-observed|reward-deterministic)\\b"
 				}
 			]
 		},
@@ -84,7 +77,7 @@
 			"patterns": [
 				{
 					"name": "constant.numeric",
-					"match": "\\b[-+]?([0-9]*\\.[0-9]+|[0-9]+)\\b"
+					"match": "\\b(((0x|0b|0o|#)[\\da-fA-F]+)|((\\d*\\.)?\\d+))\\b"
 				}
 			]
 		},
@@ -92,47 +85,39 @@
 			"patterns": [
 				{
 					"name": "constant.language",
-					"match": "\b(true|false|pos-inf)\b"
+					"match": "\\b(true|false|pos-inf)\\b"
 				}
 			]
 		},
-		"builtinfunctions": {
-			"patterns": [
-				{
-					"name": "keyword.other",
-					"match": "([^.'\"\\#]\b|^)(exp|log|sin|cos|tan|min|max|pow)\b"
-				}
-			]
-		},
-		"aggregations": {
-			"patterns": [
-				{
-					"name": "support.other",
-					"match": "\b(sum|prod|minimum|maximum|exists|forall|argmax|argmin)"
-				}
-			]
-		},
-		"distributions": {
+		"builtin-functions": {
 			"patterns": [
 				{
 					"name": "support.function",
-					"match": "\b(KronDelta|DiracDelta|Bernoulli|Normal)"
+					"match": "\\b(exp|log|sin|cos|tan|min|max|pow|sqrt)\\b"
 				}
 			]
 		},
-		"parameters": {
+		"aggregation-functions": {
 			"patterns": [
 				{
-					"name": "variable.parameter",
-					"match": "\\?\\w+\\b"
+					"name": "support.function",
+					"match": "\\b(sum|prod|minimum|maximum|exists|forall|argmax|argmin)_\\b"
 				}
 			]
 		},
-		"operators": {
+		"discrete-distribution-functions": {
 			"patterns": [
 				{
-					"name": "keyword.other.numeric",
-					"match": "(>|<|>=|<=|=|/|\\*|\\+)"
+					"name": "support.function",
+					"match": "\\b(KronDelta|Bernoulli|Discrete|UnnormDiscrete|Poisson|Binomial|NegativeBinomial|Geometric)\\b"
+				}
+			]
+		},
+		"continuous-distribution-functions": {
+			"patterns": [
+				{
+					"name": "support.function",
+					"match": "\\b(DiracDelta|Normal|Uniform|Exponential|Weibull|Gamma|Beta|Pareto|Student|Gumbel|Laplace|Cauchy|Gompertz|ChiSquare|Kumaraswamy)\\b"
 				}
 			]
 		}
