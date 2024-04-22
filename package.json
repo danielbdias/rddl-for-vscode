@@ -9,6 +9,20 @@
   "categories": [
     "Programming Languages"
   ],
+  "keywords": [
+    "RDDL",
+    "automated planning",
+    "probabilistic planning",
+    "AI",
+    "artificial intelligence"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/danielbdias/rddl-for-vscode"
+  },
+  "scripts": {
+    "vscode-package": "vsce package"
+  },
   "contributes": {
     "languages": [{
       "id": "rddl",

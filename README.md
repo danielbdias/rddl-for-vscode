@@ -16,7 +16,7 @@ Inspired on https://github.com/jan-dolejsi/vscode-pddl
 
 ## Important links
 
-- [RDDL IDE](https://github.com/pyrddlgym-project/rddl-ide/tree/main): RDDL IDE written in Python provided by the [pyRDDLgym project](https://github.com/pyrddlgym-project)
+- [RDDL IDE](https://github.com/pyrddlgym-project/rddl-ide): RDDL IDE written in Python provided by the [pyRDDLgym project](https://github.com/pyrddlgym-project)
 - [RDDL Specification](https://pyrddlgym.readthedocs.io/en/latest/rddl.html#rddl-language-description): Language specification for RDDL, used to structure the plug-in Textmate grammar
 - [Visual Studio Code Semantic Highlight Guide](https://code.visualstudio.com/api/language-extensions/semantic-highlight-guide): Guide used to build this plug-in
 - [Texmate Grammar docs](https://macromates.com/manual/en/language_grammars): Documentation on how to build a grammar in Textmate format
