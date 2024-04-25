@@ -6,6 +6,8 @@ With this extension, you can develop and see RDDL files easily and start using i
 
 Inspired on https://github.com/jan-dolejsi/vscode-pddl
 
+![](./docs/example.png)
+
 ## Features
 
 - Syntax Highlighting for `*.rddl` files
