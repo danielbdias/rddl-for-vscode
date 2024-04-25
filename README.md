@@ -16,6 +16,15 @@ Inspired on https://github.com/jan-dolejsi/vscode-pddl
 
 - Syntax highlighting for `domain` and `non-fluents` keywords when declared on `non-fluents` and `instance` blocks
 
+## How to install locally
+
+You need to have `npm` previously installed 
+
+1. Install `vsce` tool with `npm install -g @vscode/vsce`
+2. Run on this folder the command `npm run vscode-package`
+3. Once you have the file `rddl-for-vscode-0.0.1.vsix` on your machine, install it on Visual Studio Code Extension screen:
+![](./docs/plugin-install.png)
+
 ## Important links
 
 - [RDDL IDE](https://github.com/pyrddlgym-project/rddl-ide): RDDL IDE written in Python provided by the [pyRDDLgym project](https://github.com/pyrddlgym-project)
